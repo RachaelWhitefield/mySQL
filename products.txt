@@ -1,0 +1,10 @@
+Shampoo         Personal Care   9.00    7
+Conditioner     Personal Care   10.00   6
+Coffee Pods     Kitchen         12.00   10
+Bottled Water   Kitchen         2.00    12
+Pens            School          1.00    8
+Pencils         School          1.00    10
+Dog Food        Pets            20.00   5
+Cat Food        Pets            17.00   4
+Beer            Party           22.00   3
+Wine            Party           15.00   9
