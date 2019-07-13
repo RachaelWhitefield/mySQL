@@ -38,25 +38,34 @@ function menu() {
             }
         }
     ]).then(function(answer) {
-            console.log(data);
+            // console.log(data);
             var selectedItem;
             for(var i = 0; i < data.length; i++){
                 if(data[i]["product_name"] === answer.productName){
                     selectedItem = data[i]
-                    console.log(selectedItem);
+                    // console.log(selectedItem);
                 }
                 
             }
-            connection.query("UPDATE products SET ? WHERE ?", [{
-                stock_quantity: selectedItem.stock_quantity - parseInt(answer.amount)
-            },
-            {
-                product_name: answer.productName
-            }], function(err) {
-                if (err) throw err;
-                 console.log(`You have purchased ${answer.amount} of ${answer.productName}!`);
+            if(selectedItem.stock_quantity < parseInt(answer.amount)) {
+                console.log("Insufficient quantity!");
+            } else {
+
+                connection.query("UPDATE products SET ? WHERE ?", [{
+                    stock_quantity: selectedItem.stock_quantity - parseInt(answer.amount)
+                },
+                {
+                    product_name: answer.productName
+                }], function(err) {
+                    if (err) throw err;
+                     console.log(`You have purchased ${answer.amount} of ${answer.productName}!`);
+
+                     var purchasePrice = answer.amount * selectedItem.price
+                     console.log(`Your purchase price is ${purchasePrice}`);
+
+                }
+                )
             }
-            )
         })
     })
 }
