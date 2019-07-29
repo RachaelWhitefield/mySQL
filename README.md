@@ -3,7 +3,7 @@
 Bamazon is a command line node app that takes in orders from customers and depletes stock from the store's inventory;
 
 Watch the video here: 
-https://drive.google.com/file/d/1WSULre8tjaWzpgAJE39aEsc6NDL3s4cR/view?usp=sharing
+https://drive.google.com/file/d/1DwaIM4NZkg8BaTkiliQ0gOpsDhH__YkT/view?usp=sharing
 
 Step by Step instructions: 
 1. Open your terminal.
